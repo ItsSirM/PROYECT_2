@@ -143,37 +143,47 @@ public class Multi extends javax.swing.JFrame {
         tbn_inicio = new javax.swing.JButton();
         btn_sele = new javax.swing.JButton();
         equipo = new javax.swing.JComboBox<>();
-        fondo_op = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setOpaque(false);
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         seleccionados.setEditable(false);
+        seleccionados.setBackground(new java.awt.Color(153, 153, 153));
         seleccionados.setColumns(20);
         seleccionados.setRows(5);
         jScrollPane1.setViewportView(seleccionados);
 
+        lista.setBackground(new java.awt.Color(153, 153, 153));
         lista.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-        confi.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
+        confi.setFont(new java.awt.Font("Broadway", 0, 36)); // NOI18N
+        confi.setForeground(new java.awt.Color(102, 0, 0));
         confi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        confi.setText("m");
         confi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
-        jLabel2.setText("Listado de seleccionados");
+        jLabel2.setFont(new java.awt.Font("Broadway", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel2.setText("MultiJugador");
 
-        tbn_inicio.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
-        tbn_inicio.setText("MENU PRINCIPAL");
+        tbn_inicio.setBackground(new java.awt.Color(102, 0, 0));
+        tbn_inicio.setFont(new java.awt.Font("Broadway", 0, 24)); // NOI18N
+        tbn_inicio.setText("Regresar");
         tbn_inicio.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tbn_inicioMouseClicked(evt);
             }
         });
+        tbn_inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbn_inicioActionPerformed(evt);
+            }
+        });
 
-        btn_sele.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        btn_sele.setBackground(new java.awt.Color(102, 0, 0));
+        btn_sele.setFont(new java.awt.Font("Broadway", 0, 24)); // NOI18N
         btn_sele.setText("Seleccionar");
         btn_sele.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -181,75 +191,80 @@ public class Multi extends javax.swing.JFrame {
             }
         });
 
+        equipo.setBackground(new java.awt.Color(153, 153, 153));
         equipo.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Broadway", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 0, 0));
+        jLabel3.setText("Jugadores");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tbn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(btn_sele, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(confi, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(lista, 0, 255, Short.MAX_VALUE)
-                                            .addComponent(equipo, 0, 255, Short.MAX_VALUE))
-                                        .addGap(45, 45, 45))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(btn_sele, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(79, 79, 79)))))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(270, 270, 270))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(tbn_inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(381, 381, 381))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(lista, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(confi, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(379, 379, 379))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(314, 314, 314)
+                    .addComponent(jLabel3)
+                    .addContainerGap(404, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(262, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                    .addComponent(confi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(confi, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(lista, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
                         .addComponent(equipo, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(btn_sele))
+                        .addGap(31, 31, 31)
+                        .addComponent(btn_sele)
+                        .addGap(18, 18, 18)
+                        .addComponent(tbn_inicio))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addComponent(tbn_inicio)
-                .addGap(54, 54, 54))
+                .addContainerGap(87, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGap(50, 50, 50)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(398, 398, 398)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(fondo_op, javax.swing.GroupLayout.DEFAULT_SIZE, 1019, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(fondo_op, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)))
         );
 
         pack();
@@ -306,8 +321,8 @@ public class Multi extends javax.swing.JFrame {
                                 }
                                 if (selec == r.getCantidadJ()) {
                                     JOptionPane.showMessageDialog(null, "PREPARENSE PARA JUGAR");
-                                    TabSequence t = new TabSequence(n);
-                                    t.setVisible(true);
+//                                    TabSequence t = new TabSequence(n);
+//                                    t.setVisible(true);
                                     this.setVisible(false);
                                 }
                             } else {
@@ -361,8 +376,8 @@ public class Multi extends javax.swing.JFrame {
                             if (r.getCantidadJ()==conta ) {
                                 JOptionPane.showMessageDialog(null, "Puedes continuar");
                                 //aqui se llama la funcion que le va a dar set color a todo
-                                TabSequence t = new TabSequence(n);
-                                t.setVisible(true);
+//                                TabSequence t = new TabSequence(n);
+//                                t.setVisible(true);
                                 this.setVisible(false);
                             }
                         } else {
@@ -374,14 +389,18 @@ public class Multi extends javax.swing.JFrame {
                  
             } else {
                 JOptionPane.showMessageDialog(null, "Puedes continuar");
-                TabSequence t = new TabSequence(n);
-                t.setVisible(true);
+//                TabSequence t = new TabSequence(n);
+//                t.setVisible(true);
                 this.setVisible(false);
             }
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "...");
         }
     }//GEN-LAST:event_btn_seleMouseClicked
+
+    private void tbn_inicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbn_inicioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbn_inicioActionPerformed
     private boolean buscan(String[] array, String player) {
         for (String b : array) {
             if (b != null && b.equals(player)) {
@@ -399,8 +418,8 @@ public class Multi extends javax.swing.JFrame {
     private javax.swing.JButton btn_sele;
     private javax.swing.JLabel confi;
     private javax.swing.JComboBox<String> equipo;
-    private javax.swing.JLabel fondo_op;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> lista;
